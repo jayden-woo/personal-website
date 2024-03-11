@@ -1,5 +1,5 @@
-import Footer from "./footer";
-import Intro from "./intro";
-import Nav from "./nav";
+import Intro from "@/components/header/intro";
+import Nav from "@/components/header/nav";
+import Socials from "@/components/header/socials";
 
-export { Footer, Intro, Nav };
+export { Intro, Nav, Socials };
