@@ -1,5 +1,13 @@
 import Background from "@/components/background";
-import Content from "@/components/content";
+import {
+  About,
+  Activities,
+  Education,
+  Experience,
+  Footer,
+  Projects,
+  Skills,
+} from "@/components/content";
 import { Intro, Nav, Socials } from "@/components/header";
 
 export default function Page() {
@@ -14,7 +22,15 @@ export default function Page() {
           </div>
           <Socials />
         </header>
-        <Content />
+        <main className="w-1/2">
+          <About />
+          <Education />
+          <Projects />
+          <Skills />
+          <Activities />
+          <Experience />
+          <Footer />
+        </main>
       </div>
     </>
   );
