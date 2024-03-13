@@ -1,12 +1,12 @@
 import { Facebook, GitHub, Instagram, LinkedIn } from "@/lib/icons";
 
-export const NAV_LINKS = [
-  { index: "01", name: "About", link: "#about" },
-  { index: "02", name: "Education", link: "#education" },
-  { index: "03", name: "Projects", link: "#projects" },
-  { index: "04", name: "Skills", link: "#skills" },
-  { index: "05", name: "Activities", link: "#activities" },
-  { index: "06", name: "Experience", link: "#experience" },
+export const CONTENT_SECTIONS = [
+  { index: "01", id: "about", title: "About" },
+  { index: "02", id: "education", title: "Education" },
+  { index: "03", id: "projects", title: "Projects" },
+  { index: "04", id: "skills", title: "Skills" },
+  { index: "05", id: "activities", title: "Activities" },
+  { index: "06", id: "experience", title: "Experience" },
 ];
 
 export const SOCIAL_MEDIA = [

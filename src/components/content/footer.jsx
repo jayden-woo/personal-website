@@ -3,9 +3,9 @@ export default function Footer() {
     <footer>
       <p>
         {`Design inspired by `}
-        <a href="">Brittany Chiang</a>
+        <a href="/">Brittany Chiang</a>
         {` and `}
-        <a href="">Sarah Dayan</a>.
+        <a href="/">Sarah Dayan</a>.
       </p>
     </footer>
   );
