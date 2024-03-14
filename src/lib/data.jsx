@@ -6,7 +6,7 @@ export const CONTENT_SECTIONS = [
   { index: "03", id: "projects", title: "Projects" },
   { index: "04", id: "skills", title: "Skills" },
   { index: "05", id: "activities", title: "Activities" },
-  { index: "06", id: "experience", title: "Experience" },
+  { index: "06", id: "experiences", title: "Experiences" },
 ];
 
 export const SOCIAL_MEDIA = [

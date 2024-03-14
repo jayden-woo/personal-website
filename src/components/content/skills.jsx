@@ -7,12 +7,26 @@ export default function Skills() {
         <ul>
           <li>Javascript</li>
           <li>Python</li>
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>Java</li>
+          <li>SQL</li>
         </ul>
-        <li>Frameworks</li>
+        <li>Libraries & Frameworks</li>
         <ul>
-          <li>ReactJS</li>
-          <li>NodeJS</li>
+          <li>React</li>
+          <li>Next</li>
+          <li>Node</li>
+          <li>Express</li>
+          <li>Redux</li>
+        </ul>
+        <li>Tools</li>
+        <ul>
+          <li>Git & GitHub</li>
+          <li>Postman</li>
           <li>NextJS</li>
+          <li>MongoDB</li>
+          <li>MySQL</li>
         </ul>
       </ul>
     </section>

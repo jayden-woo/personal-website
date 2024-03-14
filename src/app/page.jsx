@@ -3,7 +3,7 @@ import {
   About,
   Activities,
   Education,
-  Experience,
+  Experiences,
   Footer,
   Projects,
   Skills,
@@ -28,7 +28,7 @@ export default function Page() {
           <Projects />
           <Skills />
           <Activities />
-          <Experience />
+          <Experiences />
           <Footer />
         </main>
       </div>

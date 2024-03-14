@@ -1,7 +1,7 @@
 export default function Experience() {
   return (
-    <section id="experience">
-      <h2>06. Experience</h2>
+    <section id="experiences">
+      <h2>06. Experiences</h2>
       <ul>
         <li>
           <h3>David Jones</h3>
