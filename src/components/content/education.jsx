@@ -1,7 +1,9 @@
+import { CONTENT_SECTIONS } from "@/lib/data";
+
 export default function Education() {
   return (
-    <section id="education" className="mb-16 scroll-mt-20">
-      <h2>02. Eduction</h2>
+    <section id={CONTENT_SECTIONS.Education} className="mb-16 scroll-mt-20">
+      <h2>Eduction</h2>
       <ol>
         <li>
           <h3>University of Melbourne</h3>

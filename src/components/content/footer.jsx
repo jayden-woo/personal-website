@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer>
+    <footer className="py-10">
       <p>
         {`Design inspired by `}
         <a href="/">Brittany Chiang</a>

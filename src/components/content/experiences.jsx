@@ -1,7 +1,9 @@
-export default function Experience() {
+import { CONTENT_SECTIONS } from "@/lib/data";
+
+export default function Experiences() {
   return (
-    <section id="experiences">
-      <h2>06. Experiences</h2>
+    <section id={CONTENT_SECTIONS.Experiences}>
+      <h2>Experiences</h2>
       <ul>
         <li>
           <h3>David Jones</h3>

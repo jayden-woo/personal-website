@@ -1,13 +1,13 @@
 import { Facebook, GitHub, Instagram, LinkedIn } from "@/lib/icons";
 
-export const CONTENT_SECTIONS = [
-  { index: "01", id: "about", title: "About" },
-  { index: "02", id: "education", title: "Education" },
-  { index: "03", id: "projects", title: "Projects" },
-  { index: "04", id: "skills", title: "Skills" },
-  { index: "05", id: "activities", title: "Activities" },
-  { index: "06", id: "experiences", title: "Experiences" },
-];
+export const CONTENT_SECTIONS = Object.freeze({
+  About: "about",
+  Projects: "projects",
+  Skills: "skills",
+  Education: "education",
+  Activities: "activities",
+  Experiences: "experiences",
+});
 
 export const SOCIAL_MEDIA = [
   {

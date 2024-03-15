@@ -1,7 +1,9 @@
+import { CONTENT_SECTIONS } from "@/lib/data";
+
 export default function Projects() {
   return (
-    <section id="projects">
-      <h2>03. Projects</h2>
+    <section id={CONTENT_SECTIONS.Projects}>
+      <h2>Projects</h2>
       <ul>
         <li>
           <h3>Pathfinding Visualizer</h3>

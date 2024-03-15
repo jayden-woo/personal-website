@@ -24,9 +24,9 @@ export default function Page() {
         </header>
         <main className="w-1/2 py-20">
           <About />
-          <Education />
           <Projects />
           <Skills />
+          <Education />
           <Activities />
           <Experiences />
           <Footer />

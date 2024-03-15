@@ -32,14 +32,14 @@ export default function Nav() {
     );
 
     // Find and target the sections to be observed
-    CONTENT_SECTIONS.forEach((section) => {
-      observer.current.observe(document.getElementById(section.id));
+    Object.values(CONTENT_SECTIONS).forEach((section) => {
+      observer.current.observe(document.getElementById(section));
     });
 
     // Cleanup function to remove and disconnect observer
     return () => {
-      CONTENT_SECTIONS.forEach((section) => {
-        observer.current.unobserve(document.getElementById(section.id));
+      Object.values(CONTENT_SECTIONS).forEach((section) => {
+        observer.current.unobserve(document.getElementById(section));
       });
       observer.current.disconnect();
     };
@@ -48,15 +48,15 @@ export default function Nav() {
   return (
     <nav className="my-8 hidden w-fit uppercase md:block">
       <ul>
-        {CONTENT_SECTIONS.map((section) => (
-          <li key={section.id}>
+        {Object.values(CONTENT_SECTIONS).map((section, index) => (
+          <li key={section}>
             <a
-              href={`#${section.id}`}
-              className={`group flex items-center py-3${section.id === onScreen.at(0) ? " active" : ""}`}
+              href={`#${section}`}
+              className={`group flex items-center py-3${section === onScreen.at(0) ? " active" : ""}`}
             >
-              <span className="mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 group-[.active]:w-16" />
-              <span className="text-xs font-bold tracking-widest text-slate-500 group-hover:text-slate-200 group-[.active]:text-slate-200">
-                {`${section.index}. ${section.title}`}
+              <span className="mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 group-focus-visible:w-16 group-[.active]:w-16 group-[.active]:bg-sky-400" />
+              <span className="text-xs font-bold tracking-widest text-slate-500 group-hover:text-slate-400 group-focus-visible:text-slate-400 group-[.active]:font-extrabold group-[.active]:text-sky-400">
+                {`0${index + 1}. ${section}`}
               </span>
             </a>
           </li>

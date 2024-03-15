@@ -1,7 +1,9 @@
+import { CONTENT_SECTIONS } from "@/lib/data";
+
 export default function Skills() {
   return (
-    <section id="skills">
-      <h2>04. Skills</h2>
+    <section id={CONTENT_SECTIONS.Skills}>
+      <h2>Skills</h2>
       <ul>
         <li>Languages</li>
         <ul>

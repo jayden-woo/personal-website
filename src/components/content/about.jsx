@@ -1,7 +1,9 @@
+import { CONTENT_SECTIONS } from "@/lib/data";
+
 export default function About() {
   return (
-    <section id="about">
-      <h2>01. About</h2>
+    <section id={CONTENT_SECTIONS.About}>
+      <h2>About</h2>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
         labore et dolore magna aliqua.
