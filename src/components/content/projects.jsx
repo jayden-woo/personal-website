@@ -3,7 +3,7 @@ import { CONTENT_SECTIONS } from "@/lib/data";
 export default function Projects() {
   return (
     <section id={CONTENT_SECTIONS.Projects}>
-      <h2>Projects</h2>
+      <h2>Some Things I&apos;ve Built</h2>
       <ul>
         <li>
           <h3>Pathfinding Visualizer</h3>

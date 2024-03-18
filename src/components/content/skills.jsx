@@ -3,7 +3,7 @@ import { CONTENT_SECTIONS } from "@/lib/data";
 export default function Skills() {
   return (
     <section id={CONTENT_SECTIONS.Skills}>
-      <h2>Skills</h2>
+      <h2>What Skills I&apos;ve Acquired</h2>
       <ul>
         <li>Languages</li>
         <ul>

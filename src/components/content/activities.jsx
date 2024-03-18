@@ -3,7 +3,7 @@ import { CONTENT_SECTIONS } from "@/lib/data";
 export default function Activities() {
   return (
     <section id={CONTENT_SECTIONS.Activities}>
-      <h2>Activities</h2>
+      <h2>About Things I&apos;ve Done</h2>
       <ul>
         <li>
           <h3>Education and Welfare Officer</h3>

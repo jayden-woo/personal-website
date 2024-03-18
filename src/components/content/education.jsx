@@ -3,7 +3,7 @@ import { CONTENT_SECTIONS } from "@/lib/data";
 export default function Education() {
   return (
     <section id={CONTENT_SECTIONS.Education} className="mb-16 scroll-mt-20">
-      <h2>Eduction</h2>
+      <h2>Where I&apos;ve Studied At</h2>
       <ol>
         <li>
           <h3>University of Melbourne</h3>
