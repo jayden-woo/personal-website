@@ -31,3 +31,9 @@ export const SOCIAL_MEDIA = [
     link: "https://instagram.com/jayden.wjc",
   },
 ];
+
+export const LINK_VARIANTS = Object.freeze({
+  Text: Symbol("text"),
+  Icon: Symbol("icon"),
+  Title: Symbol("title"),
+});
