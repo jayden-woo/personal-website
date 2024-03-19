@@ -5,11 +5,13 @@ import { useEffect, useRef, useState } from "react";
 
 export default function Nav() {
   const [onScreen, setOnScreen] = useState([]);
-  const observer = useRef(null);
+  const navObserver = useRef(null);
+  const contentObserver = useRef(null);
 
+  // Keep track of which section is on the screen and dynamically update the nav bar
   useEffect(() => {
     // Create a new instance and pass a callback function
-    observer.current = new IntersectionObserver(
+    navObserver.current = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (!entry.isIntersecting) {
@@ -25,7 +27,7 @@ export default function Nav() {
         });
       },
       {
-        // TODO: Check and adjust on threshold
+        // TODO: Check and adjust the threshold
         // Set the visible threshold of the section before deciding it is intersecting
         threshold: [0.1],
       }
@@ -33,15 +35,43 @@ export default function Nav() {
 
     // Find and target the sections to be observed
     Object.values(CONTENT_SECTIONS).forEach((section) => {
-      observer.current.observe(document.getElementById(section));
+      navObserver.current.observe(document.getElementById(section));
     });
 
-    // Cleanup function to remove and disconnect observer
+    // Cleanup function to remove and disconnect the nav observer
     return () => {
       Object.values(CONTENT_SECTIONS).forEach((section) => {
-        observer.current.unobserve(document.getElementById(section));
+        navObserver.current.unobserve(document.getElementById(section));
       });
-      observer.current.disconnect();
+      navObserver.current.disconnect();
+    };
+  }, []);
+
+  // Keep track of which content is on the screen and add a show class to them
+  useEffect(() => {
+    // Create a new instance and pass a callback function
+    (contentObserver.current = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        // Add a show class to the element intersecting the viewport
+        if (entry.isIntersecting) entry.target.classList.add("show");
+      });
+    })),
+      {
+        // TODO: Check and adjust the threshold
+        // Set the visible threshold of the section before deciding it is intersecting
+        threshold: [0.3],
+      };
+
+    // Find and target the content with the data-observe attribute to be observed
+    const content = document.querySelectorAll("[data-observe]");
+    content.forEach((element) => {
+      contentObserver.current.observe(element);
+    });
+
+    // Cleanup function to remove and disconnect the content observer
+    return () => {
+      content.forEach((element) => contentObserver.current.unobserve(element));
+      contentObserver.current.disconnect;
     };
   }, []);
 

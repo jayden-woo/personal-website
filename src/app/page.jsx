@@ -24,7 +24,7 @@ export default function Page() {
           <Socials />
         </header>
         <main className="w-1/2 py-20">
-          <TagWrapper depth={2} before="<main>" after="</main>">
+          <TagWrapper className="hide has-[.show]:show" depth={2} before="<main>" after="</main>">
             <About />
             <Projects />
             <Skills />
