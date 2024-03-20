@@ -1,15 +1,14 @@
 import { CONTENT_SECTIONS } from "@/lib/data";
 import Link from "@/components/link";
 import TagWrapper from "@/components/tag-wrapper";
+import { SectionTitle } from "@/components/section";
 
 export default function About() {
   return (
     <section id={CONTENT_SECTIONS.About} className="mb-32 scroll-mt-16">
-      <TagWrapper className="my-4" before="<h2>" after="</h2>">
-        <h2 className="py-2 text-4xl font-bold tracking-tight text-slate-200 opacity-0">
-          About <span className="inline-block first-letter:text-sky-400">Me</span>
-        </h2>
-      </TagWrapper>
+      <SectionTitle>
+        About <span className="inline-block first-letter:text-sky-400">Me</span>
+      </SectionTitle>
       <TagWrapper className="my-4 leading-relaxed" before="<p>" after="</p>">
         <p className="my-2 opacity-0">
           Hey there! My name is Jayden and I&apos;m a computing graduate with a Bachelor&apos;s
