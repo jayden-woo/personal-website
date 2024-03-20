@@ -19,9 +19,6 @@ module.exports = {
           940: "#060A16",
         },
       },
-      transitionDelay: {
-        900: "900ms",
-      },
     },
   },
   plugins: [],
