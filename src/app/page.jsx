@@ -9,7 +9,6 @@ import {
   Skills,
 } from "@/components/content";
 import { Intro, Nav, Socials } from "@/components/header";
-import TagWrapper from "@/components/tag-wrapper";
 
 export default function Page() {
   return (
@@ -24,15 +23,13 @@ export default function Page() {
           <Socials />
         </header>
         <main className="w-1/2 py-20">
-          <TagWrapper className="hide has-[.show]:show" depth={2} before="<main>" after="</main>">
-            <About />
-            <Projects />
-            <Skills />
-            <Education />
-            <Activities />
-            <Experiences />
-            <Footer />
-          </TagWrapper>
+          <About />
+          <Projects />
+          <Skills />
+          <Education />
+          <Activities />
+          <Experiences />
+          <Footer />
         </main>
       </div>
     </>
