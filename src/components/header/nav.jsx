@@ -128,8 +128,8 @@ export default function Nav() {
   }, []);
 
   return (
-    <nav className="my-8 hidden w-fit uppercase md:block">
-      <ul>
+    <nav className="hidden lg:block">
+      <ul className="my-8 w-fit uppercase">
         {Object.values(CONTENT_SECTIONS).map((section, index) => (
           <li key={section} className="opacity-0">
             <a
