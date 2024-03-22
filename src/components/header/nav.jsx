@@ -53,9 +53,12 @@ export default function Nav() {
     contentObserver.current = new IntersectionObserver(
       (entries) => {
         entries
-          // Filter out the exiting sections
-          .filter((entry) => entry.isIntersecting)
-          .forEach((entry, index) => {
+          // Filter out the exiting and already visible sections
+          .filter(
+            (entry) =>
+              entry.isIntersecting && !entry.target.checkVisibility({ opacityProperty: true })
+          )
+          .forEach(({ target }, index) => {
             // Define the keyframes for the animation fading in from the right
             const keyFrames = {
               transform: ["translateX(2rem)", "translateX(0)"],
@@ -72,34 +75,39 @@ export default function Nav() {
             };
 
             // Unobserve the section to ensure each element is only loaded once
-            contentObserver.current.unobserve(entry.target);
-            // Set a delay for removing the opacity-0 class to match the animation timeline
+            contentObserver.current.unobserve(target);
+            // Add a small delay to match the animation timeline for smoother visuals
             setTimeout(() => {
-              entry.target.classList.remove("opacity-0");
+              // Replace all opacity-0 classes (including media queries and other state selectors) to opacity-100
+              target.className = target.className.replace(/opacity-0/g, "opacity-100");
             }, delay + 100);
             // Start the animation on the intersecting section with the defined keyframes and options
-            entry.target.animate(keyFrames, options);
+            target.animate(keyFrames, options);
 
-            // Perform the same routine on the before pseudo element if section is the first child
-            if (entry.target === entry.target.parentElement.firstElementChild) {
+            const parent = target.parentElement;
+            // Perform the same routine on the :before pseudo element if section is the first child
+            if (target === parent.firstElementChild) {
+              // Add a small delay to the initial delay to fix animation glitch
               setTimeout(() => {
-                entry.target.parentElement.classList.remove("before:opacity-0");
-                // Add a small delay to the initial delay to fix animation glitch
+                parent.className = parent.className.replace(
+                  /(?<=before:)opacity-0/g,
+                  "opacity-100"
+                );
               }, delay + 50);
-              entry.target.parentElement.animate(keyFrames, {
+              parent.animate(keyFrames, {
                 ...options,
                 // Add an extra option to target the before pseudo element
                 pseudoElement: ":before",
               });
             }
 
-            // Perform the same routine on the after pseudo element if section is the last child
-            if (entry.target === entry.target.parentElement.lastElementChild) {
+            // Perform the same routine on the :after pseudo element if section is the last child
+            if (target === parent.lastElementChild) {
+              // Add a small delay to the initial delay to fix animation glitch
               setTimeout(() => {
-                entry.target.parentElement.classList.remove("after:opacity-0");
-                // Add a small delay to the initial delay to fix animation glitch
+                parent.className = parent.className.replace(/(?<=after:)opacity-0/g, "opacity-100");
               }, delay + 50);
-              entry.target.parentElement.animate(keyFrames, {
+              parent.animate(keyFrames, {
                 ...options,
                 // Add an extra option to target the after pseudo element
                 pseudoElement: ":after",
@@ -114,10 +122,13 @@ export default function Nav() {
       }
     );
 
-    // Find and target the content with the opacity-0 class
-    const content = document.querySelectorAll(".opacity-0");
+    // Find and target the elements that contain any opacity-0 class in it
+    const content = document.querySelectorAll("[class*='opacity-0']");
     content.forEach((element) => {
-      contentObserver.current.observe(element);
+      // Only observe the element that doesn't include any pseudo elements
+      if (!element.className.includes("before:") && !element.className.includes("after:")) {
+        contentObserver.current.observe(element);
+      }
     });
 
     // Cleanup function to remove and disconnect the content observer
@@ -131,12 +142,12 @@ export default function Nav() {
     <nav className="hidden lg:block">
       <ul className="my-8 w-fit uppercase">
         {Object.values(CONTENT_SECTIONS).map((section, index) => (
-          <li key={section} className="opacity-0">
+          <li key={section} className="md:motion-safe:opacity-0">
             <a
               href={`#${section}`}
               className={`group flex items-center py-3${section === onScreen.at(0) ? " active" : ""}`}
             >
-              <span className="mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 group-focus-visible:w-16 group-[.active]:w-16 group-[.active]:bg-sky-400" />
+              <span className="mr-4 h-px w-8 bg-slate-600 group-hover:w-16 group-focus-visible:w-16 group-[.active]:w-16 group-[.active]:bg-sky-400 motion-safe:transition-all" />
               <span className="text-xs font-bold tracking-widest text-slate-500 group-hover:text-slate-400 group-focus-visible:text-slate-400 group-[.active]:font-extrabold group-[.active]:text-sky-400">
                 {`0${index + 1}. ${section}`}
               </span>
