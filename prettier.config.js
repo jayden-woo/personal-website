@@ -12,4 +12,5 @@ module.exports = {
   bracketSameLine: false,
   arrowParens: "always",
   endOfLine: "lf",
+  tailwindFunctions: ["clsx"],
 };

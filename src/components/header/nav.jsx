@@ -1,17 +1,16 @@
 "use client";
 
 import { CONTENT_SECTIONS } from "@/lib/data";
+import clsx from "clsx";
 import { useEffect, useRef, useState } from "react";
 
 export default function Nav() {
   const [onScreen, setOnScreen] = useState([]);
-  const navObserver = useRef(null);
-  const contentObserver = useRef(null);
 
   // Keep track of which section is on the screen and dynamically update the nav bar
   useEffect(() => {
     // Create a new instance and pass a callback function
-    navObserver.current = new IntersectionObserver(
+    const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (!entry.isIntersecting) {
@@ -35,29 +34,33 @@ export default function Nav() {
 
     // Find and target the sections to be observed
     Object.values(CONTENT_SECTIONS).forEach((section) => {
-      navObserver.current.observe(document.getElementById(section));
+      observer.observe(document.getElementById(section));
     });
 
-    // Cleanup function to remove and disconnect the nav observer
-    return () => {
-      Object.values(CONTENT_SECTIONS).forEach((section) => {
-        navObserver.current.unobserve(document.getElementById(section));
-      });
-      navObserver.current.disconnect();
-    };
+    // Clean up function to disconnect the observer
+    return () => observer.disconnect();
   }, []);
 
-  // Keep track of which content is on the screen and add a show class to them
+  // Keep track of which content is on the screen and animate them into view
   useEffect(() => {
+    // TODO: Adjust the threshold (currently set at 12% of the screen height) (10%/12%/14%/15%)
+    // Calculate the threshold height relative to current viewport height to force start animation
+    const thresholdHeight = window.innerHeight * 0.12;
     // Create a new instance and pass a callback function
-    contentObserver.current = new IntersectionObserver(
+    const observer = new IntersectionObserver(
       (entries) => {
         entries
-          // Filter out the exiting and already visible sections
-          .filter(
-            (entry) =>
-              entry.isIntersecting && !entry.target.checkVisibility({ opacityProperty: true })
-          )
+          // Filter out the invalid sections
+          .filter((entry) => {
+            // Allow entering and currently non-visible sections only (with opacity-0)
+            if (entry.isIntersecting && !entry.target.checkVisibility({ opacityProperty: true }))
+              // Include section if it is already fully visible or the intersected height surpasses the preset threshold
+              return (
+                entry.intersectionRatio == 1 || entry.intersectionRect.height > thresholdHeight
+              );
+            // Reject any other sections
+            return false;
+          })
           .forEach(({ target }, index) => {
             // Define the keyframes for the animation fading in from the right
             const keyFrames = {
@@ -75,7 +78,7 @@ export default function Nav() {
             };
 
             // Unobserve the section to ensure each element is only loaded once
-            contentObserver.current.unobserve(target);
+            observer.unobserve(target);
             // Add a small delay to match the animation timeline for smoother visuals
             setTimeout(() => {
               // Replace all opacity-0 classes (including media queries and other state selectors) to opacity-100
@@ -117,25 +120,21 @@ export default function Nav() {
       },
       {
         // TODO: Check and adjust the threshold
-        // Set the visible threshold of the section before deciding it is intersecting
-        threshold: [1],
+        // Set the visible thresholds of the section before checking if it is intersecting
+        threshold: [0.25, 0.5, 0.75, 1],
       }
     );
 
-    // Find and target the elements that contain any opacity-0 class in it
-    const content = document.querySelectorAll("[class*='opacity-0']");
-    content.forEach((element) => {
+    // Find the elements that contain any opacity-0 class in them
+    document.querySelectorAll("[class*='opacity-0']").forEach((element) => {
       // Only observe the element that doesn't include any pseudo elements
       if (!element.className.includes("before:") && !element.className.includes("after:")) {
-        contentObserver.current.observe(element);
+        observer.observe(element);
       }
     });
 
-    // Cleanup function to remove and disconnect the content observer
-    return () => {
-      content.forEach((element) => contentObserver.current.unobserve(element));
-      contentObserver.current.disconnect;
-    };
+    // Clean up function to disconnect the observer
+    return () => observer.disconnect;
   }, []);
 
   return (
@@ -145,7 +144,9 @@ export default function Nav() {
           <li key={section} className="md:motion-safe:opacity-0">
             <a
               href={`#${section}`}
-              className={`group flex items-center py-3${section === onScreen.at(0) ? " active" : ""}`}
+              className={clsx("group flex items-center py-3", {
+                active: section === onScreen.at(0),
+              })}
             >
               <span className="mr-4 h-px w-8 bg-slate-600 group-hover:w-16 group-focus-visible:w-16 group-[.active]:w-16 group-[.active]:bg-sky-400 motion-safe:transition-all" />
               <span className="text-xs font-bold tracking-widest text-slate-500 group-hover:text-slate-400 group-focus-visible:text-slate-400 group-[.active]:font-extrabold group-[.active]:text-sky-400">
