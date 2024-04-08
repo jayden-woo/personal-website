@@ -10,7 +10,7 @@ import {
 } from "@/components/content";
 import { Intro, Nav, Socials } from "@/components/header";
 import Link from "@/components/link";
-import { LINK_VARIANTS } from "@/lib/data";
+import { LINK_VARIANTS } from "@/assets/data/constants";
 
 export default function Page() {
   return (

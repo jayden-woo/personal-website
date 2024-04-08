@@ -1,4 +1,4 @@
-import { CONTENT_SECTIONS } from "@/lib/data";
+import { CONTENT_SECTIONS } from "@/assets/data/constants";
 
 export default function Education() {
   return (
@@ -6,9 +6,19 @@ export default function Education() {
       <h2>Where I&apos;ve Studied At</h2>
       <ol>
         <li>
-          <h3>University of Melbourne</h3>
-          <p>Bachelor of Science</p>
-          <p>Major: Computing and Software Systems</p>
+          <h3>
+            <a href="https://www.unimelb.edu.au/">University of Melbourne</a>
+          </h3>
+          <p>
+            <a href="https://study.unimelb.edu.au/find/courses/undergraduate/bachelor-of-science/">
+              Bachelor of Science
+            </a>
+          </p>
+          <p>
+            <a href="https://study.unimelb.edu.au/find/courses/major/computing-and-software-systems/">
+              Major: Computing and Software Systems
+            </a>
+          </p>
         </li>
         <li>
           <h3>Sunway College</h3>

@@ -1,4 +1,4 @@
-import { CONTENT_SECTIONS } from "@/lib/data";
+import { CONTENT_SECTIONS } from "@/assets/data/constants";
 import Link from "@/components/link";
 import TagWrapper from "@/components/tag-wrapper";
 import { SectionTitle } from "@/components/section";
@@ -14,11 +14,8 @@ export default function About() {
       <TagWrapper className="my-4 leading-relaxed" before="<p>" after="</p>">
         <p className="my-2 md:motion-safe:opacity-0">
           Hey there! My name is Jayden and I&apos;m a computing graduate with a Bachelor&apos;s
-          degree from the{" "}
-          <Link href="https://study.unimelb.edu.au/find/courses/major/computing-and-software-systems/">
-            University of Melbourne
-          </Link>
-          . I&apos;ve always been fascinated by tech and machineries since young, and my time at uni
+          degree from the <Link href="https://www.unimelb.edu.au/">University of Melbourne</Link>.
+          I&apos;ve always been fascinated by tech and machineries since young, and my time at uni
           only deepened that passion further.
         </p>
         <p className="my-4 md:motion-safe:opacity-0">

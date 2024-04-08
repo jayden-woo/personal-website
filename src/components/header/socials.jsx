@@ -1,4 +1,5 @@
-import { LINK_VARIANTS, SOCIAL_MEDIA } from "@/lib/data";
+import { LINK_VARIANTS } from "@/assets/data/constants";
+import SOCIAL_MEDIA from "@/assets/data/social-media";
 import Link from "@/components/link";
 
 export default function Socials() {

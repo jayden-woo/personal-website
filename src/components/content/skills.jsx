@@ -1,4 +1,4 @@
-import { CONTENT_SECTIONS } from "@/lib/data";
+import { CONTENT_SECTIONS } from "@/assets/data/constants";
 
 export default function Skills() {
   return (

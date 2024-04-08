@@ -1,6 +1,6 @@
 "use client";
 
-import { CONTENT_SECTIONS } from "@/lib/data";
+import { CONTENT_SECTIONS } from "@/assets/data/constants";
 import clsx from "clsx";
 import { useEffect, useRef, useState } from "react";
 
