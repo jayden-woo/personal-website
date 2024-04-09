@@ -12,25 +12,25 @@ export default function About() {
         </SectionTitle>
       </TagWrapper>
       <TagWrapper className="my-4 leading-relaxed" before="<p>" after="</p>">
-        <p className="my-2 md:motion-safe:opacity-0">
+        <p className="my-2 md:motion-safe:invisible">
           Hey there! My name is Jayden and I&apos;m a computing graduate with a Bachelor&apos;s
           degree from the <Link href="https://www.unimelb.edu.au/">University of Melbourne</Link>.
           I&apos;ve always been fascinated by tech and machineries since young, and my time at uni
           only deepened that passion further.
         </p>
-        <p className="my-4 md:motion-safe:opacity-0">
+        <p className="my-4 md:motion-safe:invisible">
           During my studies, I dove into everything from algorithms to AI, and I loved every bit of
           it. Some things I&apos;ve dabbled in are web dev, computing systems, software dev, machine
           learning, game dev, and even had the chance to do a whole investments minor paired with
           some accounting.
         </p>
-        <p className="my-4 md:motion-safe:opacity-0">
+        <p className="my-4 md:motion-safe:invisible">
           Now that I&apos;m out in the real world, I&apos;m pumped to put my skills to work. Whether
           it&apos;s building cool software, coding aesthetic website, or tackling big challenges,
           I&apos;m ready to make a dent in the tech world and gain valuable experiences from
           different fields.
         </p>
-        <p className="my-2 md:motion-safe:opacity-0">
+        <p className="my-2 md:motion-safe:invisible">
           {/* TODO: Add free time hobbies section and easter egg for BoTW */}
           In my free time, I love playing some occasional badminton, hanging around beaches or
           parks, running around Hyrule solving <Link href="/">Shrine puzzles</Link>, or even bending

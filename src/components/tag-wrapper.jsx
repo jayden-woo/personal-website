@@ -6,9 +6,9 @@ export default function TagWrapper({ children, tag: Tag = "div", className = "",
       className={clsx(
         className,
         // Add before pseudo-element and its styles
-        "before:relative before:-left-1 before:my-1 before:text-sm before:content-[attr(before)] md:before:-left-3 md:motion-safe:before:opacity-0",
+        "before:relative before:-left-1 before:my-1 before:text-sm before:content-[attr(before)] md:before:-left-3 md:motion-safe:before:invisible",
         // Add after pseudo-element and its styles
-        "after:relative after:-left-1 after:my-1 after:text-sm after:content-[attr(after)] md:after:-left-3 md:motion-safe:after:opacity-0"
+        "after:relative after:-left-1 after:my-1 after:text-sm after:content-[attr(after)] md:after:-left-3 md:motion-safe:after:invisible"
       )}
       {...rest}
     >

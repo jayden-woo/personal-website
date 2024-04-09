@@ -2,7 +2,7 @@
 
 import { CONTENT_SECTIONS } from "@/assets/data/constants";
 import clsx from "clsx";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Nav() {
   const [onScreen, setOnScreen] = useState([]);
@@ -52,14 +52,15 @@ export default function Nav() {
         entries
           // Filter out the invalid sections
           .filter((entry) => {
-            // Allow entering and currently non-visible sections only (with opacity-0)
-            if (entry.isIntersecting && !entry.target.checkVisibility({ opacityProperty: true }))
+            // Reject exiting or currently visible section (with "invisible" class but in reduced motion)
+            if (
+              !entry.isIntersecting ||
+              entry.target.checkVisibility({ visibilityProperty: true })
+            ) {
+              return false;
+            }
               // Include section if it is already fully visible or the intersected height surpasses the preset threshold
-              return (
-                entry.intersectionRatio == 1 || entry.intersectionRect.height > thresholdHeight
-              );
-            // Reject any other sections
-            return false;
+            return entry.intersectionRatio == 1 || entry.intersectionRect.height > thresholdHeight;
           })
           .forEach(({ target }, index) => {
             // Define the keyframes for the animation fading in from the right
@@ -77,12 +78,12 @@ export default function Nav() {
               easing: "ease-in-out",
             };
 
-            // Unobserve the section to ensure each element is only loaded once
+            // Unobserve the section to ensure each element is only loaded once and reduce future filtering
             observer.unobserve(target);
             // Add a small delay to match the animation timeline for smoother visuals
             setTimeout(() => {
-              // Replace all opacity-0 classes (including media queries and other state selectors) to opacity-100
-              target.className = target.className.replace(/opacity-0/g, "opacity-100");
+              // Replace all invisible classes (including media queries and other state selectors) to visible
+              target.className = target.className.replace(/invisible/g, "visible");
             }, delay + 100);
             // Start the animation on the intersecting section with the defined keyframes and options
             target.animate(keyFrames, options);
@@ -92,10 +93,7 @@ export default function Nav() {
             if (target === parent.firstElementChild) {
               // Add a small delay to the initial delay to fix animation glitch
               setTimeout(() => {
-                parent.className = parent.className.replace(
-                  /(?<=before:)opacity-0/g,
-                  "opacity-100"
-                );
+                parent.className = parent.className.replace(/(?<=before:)invisible/g, "visible");
               }, delay + 50);
               parent.animate(keyFrames, {
                 ...options,
@@ -108,7 +106,7 @@ export default function Nav() {
             if (target === parent.lastElementChild) {
               // Add a small delay to the initial delay to fix animation glitch
               setTimeout(() => {
-                parent.className = parent.className.replace(/(?<=after:)opacity-0/g, "opacity-100");
+                parent.className = parent.className.replace(/(?<=after:)invisible/g, "visible");
               }, delay + 50);
               parent.animate(keyFrames, {
                 ...options,
@@ -125,9 +123,9 @@ export default function Nav() {
       }
     );
 
-    // Find the elements that contain any opacity-0 class in them
-    document.querySelectorAll("[class*='opacity-0']").forEach((element) => {
-      // Only observe the element that doesn't include any pseudo elements
+    // Find the elements that contain any invisible class in them
+    document.querySelectorAll("[class*='invisible']").forEach((element) => {
+      // Only observe the element that doesn't include any before or after pseudo elements
       if (!element.className.includes("before:") && !element.className.includes("after:")) {
         observer.observe(element);
       }
@@ -141,7 +139,7 @@ export default function Nav() {
     <nav className="hidden lg:block">
       <ul className="my-8 w-fit uppercase">
         {Object.values(CONTENT_SECTIONS).map((section, index) => (
-          <li key={section} className="md:motion-safe:opacity-0">
+          <li key={section} className="md:motion-safe:invisible">
             <a
               href={`#${section}`}
               className={clsx("group flex items-center py-3", {

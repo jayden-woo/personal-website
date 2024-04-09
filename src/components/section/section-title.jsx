@@ -38,7 +38,7 @@ export default function SectionTitle({ children }) {
   return (
     <h2
       ref={titleRef}
-      className="-my-2 py-4 text-2xl font-bold tracking-tight text-slate-200 sm:text-4xl md:-my-3 md:py-5 md:motion-safe:opacity-0 lg:my-0 lg:py-2"
+      className="-my-2 py-4 text-2xl font-bold tracking-tight text-slate-200 sm:text-4xl md:-my-3 md:py-5 md:motion-safe:invisible lg:my-0 lg:py-2"
     >
       {children}
     </h2>
