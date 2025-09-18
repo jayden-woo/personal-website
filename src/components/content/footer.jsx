@@ -3,9 +3,9 @@ export default function Footer() {
     <footer className="py-10">
       <p>
         {`Design inspired by `}
-        <a href="/">Brittany Chiang</a>
+        <a href="https://brittanychiang.com/">Brittany Chiang</a>
         {` and `}
-        <a href="/">Sarah Dayan</a>.
+        <a href="https://www.sarahdayan.dev/">Sarah Dayan</a>.
       </p>
     </footer>
   );

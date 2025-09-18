@@ -21,8 +21,14 @@ export default function Education() {
           </p>
         </li>
         <li>
-          <h3>Sunway College</h3>
-          <p>Cambridge GCE Advanced Level</p>
+          <h3>
+            <a href="https://sunwaycollege.edu.my/">Sunway College</a>
+          </h3>
+          <p>
+            <a href="https://sunwaycollege.edu.my/programmes/pre-university-foundation/cambridge-gce-advanced-level">
+              Cambridge GCE Advanced Level
+            </a>
+          </p>
           <p>Subjects: Mathematics, Further Mathematics, Physics, Chemistry</p>
         </li>
       </ol>

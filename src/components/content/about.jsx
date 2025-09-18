@@ -15,26 +15,27 @@ export default function About() {
         <p className="my-2 md:motion-safe:invisible">
           Hey there! My name is Jayden and I&apos;m a computing graduate with a Bachelor&apos;s
           degree from the <Link href="https://www.unimelb.edu.au/">University of Melbourne</Link>.
-          I&apos;ve always been fascinated by tech and machineries since young, and my time at uni
-          only deepened that passion further.
+          My fascination with technology started young, from tinkering with machines to exploring
+          how things work, and my time at uni only deepened that curiosity.
         </p>
         <p className="my-4 md:motion-safe:invisible">
           During my studies, I dove into everything from algorithms to AI, and I loved every bit of
-          it. Some things I&apos;ve dabbled in are web dev, computing systems, software dev, machine
-          learning, game dev, and even had the chance to do a whole investments minor paired with
-          some accounting.
+          it. Some things I&apos;ve dabbled in are web development, computing systems, software
+          engineering, machine learning, and even a little bit of game development. I also completed
+          an Investments minor with some accounting, which gave me a broader perspective on how tech
+          connects with other industries.
         </p>
         <p className="my-4 md:motion-safe:invisible">
-          Now that I&apos;m out in the real world, I&apos;m pumped to put my skills to work. Whether
-          it&apos;s building cool software, coding aesthetic website, or tackling big challenges,
-          I&apos;m ready to make a dent in the tech world and gain valuable experiences from
-          different fields.
+          Now, I&apos;m excited to put my skills into action, whether that means building intuitive
+          web experiences, developing scalable software, or tackling complex challenges. I&apos;m
+          eager to keep learning, collaborate with others, and make an impact in the tech world.
         </p>
         <p className="my-2 md:motion-safe:invisible">
-          {/* TODO: Add free time hobbies section and easter egg for BoTW */}
-          In my free time, I love playing some occasional badminton, hanging around beaches or
-          parks, running around Hyrule solving <Link href="/">Shrine puzzles</Link>, or even bending
-          my mind watching movies like Inception or Interstellar.
+          Outside of coding, you&apos;ll probably find me on a badminton court, watching a sunset by
+          the beach, or just relaxing in a park. At home, I dive into mind-bending films like
+          Inception and Interstellar, get lost in sci-fi worlds like Avatar or Pacific Rim, keep the{" "}
+          <Link href="https://www.klei.com/games/oxygen-not-included">Oxygen Included</Link> for my
+          dupes, or watch 20 Formula 1 cars drive around in circles for 2 hours.
         </p>
       </TagWrapper>
     </section>
