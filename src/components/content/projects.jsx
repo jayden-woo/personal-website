@@ -1,55 +1,27 @@
 import { CONTENT_SECTIONS } from "@/assets/data/constants";
+import TagWrapper from "@/components/tag-wrapper";
+import { ProjectCard, SectionTitle } from "@/components/section";
+import PROJECTS_DATA from "@/assets/data/projects";
 
 export default function Projects() {
   return (
-    <section id={CONTENT_SECTIONS.Projects}>
-      <h2>Some Things I&apos;ve Built</h2>
-      <ul>
-        <li>
-          <h3>Pathfinding Visualizer</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-            dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-            mollit anim id est laborum.
-          </p>
-        </li>
-        <li>
-          <h3>Connected</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-            dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-            mollit anim id est laborum.
-          </p>
-        </li>
-        <li>
-          <h3>Snacks in a Van</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-            dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-            mollit anim id est laborum.
-          </p>
-        </li>
-        <li>
-          <h3>Raytracer</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-            dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-            mollit anim id est laborum.
-          </p>
-        </li>
-      </ul>
+    <section id={CONTENT_SECTIONS.Projects} className="mb-16 scroll-mt-16 lg:mb-32">
+      <TagWrapper className="my-4 contents" before="<h2>" after="</h2>">
+        <SectionTitle>
+          <span className="hidden md:inline">Some </span>Things I&apos;ve{" "}
+          <span className="inline-block first-letter:text-sky-400">Built</span>
+        </SectionTitle>
+      </TagWrapper>
+      <TagWrapper className="group/list my-4 leading-relaxed" tag="ul" before="<ul>" after="</ul>">
+        {PROJECTS_DATA.map((item, index) => (
+          <li
+            key={index}
+            className="my-5 first:mt-4 last:mb-2 md:motion-safe:invisible lg:hover:!opacity-100 lg:group-hover/list:opacity-50"
+          >
+            <ProjectCard {...item} />
+          </li>
+        ))}
+      </TagWrapper>
     </section>
   );
 }
