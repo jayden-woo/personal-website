@@ -59,7 +59,7 @@ export default function Nav() {
             ) {
               return false;
             }
-              // Include section if it is already fully visible or the intersected height surpasses the preset threshold
+            // Include section if it is already fully visible or the intersected height surpasses the preset threshold
             return entry.intersectionRatio == 1 || entry.intersectionRect.height > thresholdHeight;
           })
           .forEach(({ target }, index) => {

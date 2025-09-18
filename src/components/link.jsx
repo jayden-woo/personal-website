@@ -8,9 +8,6 @@ export default function Link({ children, variant = LINK_VARIANTS.Text, className
     ...rest,
   };
 
-  // Add a whitespace to delimit the different classes
-  className += className === "" ? "" : " ";
-
   switch (variant) {
     case LINK_VARIANTS.Text:
       // Add underline for links which thickens when hovered
@@ -30,7 +27,10 @@ export default function Link({ children, variant = LINK_VARIANTS.Text, className
       className = clsx(className, "fill-current hover:fill-slate-200 focus-visible:fill-slate-200");
       break;
     case LINK_VARIANTS.Title:
-      className = clsx(className, "text-lg font-medium leading-tight text-slate-200");
+      className = clsx(
+        className,
+        "text-lg font-medium leading-tight text-slate-200 focus-visible:text-sky-400"
+      );
       break;
     case LINK_VARIANTS.Skip:
       className = clsx(
