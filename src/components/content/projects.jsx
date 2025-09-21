@@ -14,12 +14,7 @@ export default function Projects() {
       </TagWrapper>
       <TagWrapper className="group/list my-4 leading-relaxed" tag="ul" before="<ul>" after="</ul>">
         {PROJECTS_DATA.map((item, index) => (
-          <li
-            key={index}
-            className="my-5 first:mt-4 last:mb-2 md:motion-safe:invisible lg:hover:!opacity-100 lg:group-hover/list:opacity-50"
-          >
-            <ProjectCard {...item} />
-          </li>
+          <ProjectCard key={index} {...item} />
         ))}
       </TagWrapper>
     </section>
