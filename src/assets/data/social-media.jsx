@@ -3,23 +3,23 @@ import { Facebook, GitHub, Instagram, LinkedIn } from "@/assets/icons";
 const SOCIAL_MEDIA = [
   {
     name: "GitHub",
-    icon: <GitHub />,
     link: "https://github.com/jayden-woo",
+    Icon: GitHub,
   },
   {
     name: "LinkedIn",
-    icon: <LinkedIn />,
     link: "https://linkedin.com/in/junchengwoo",
+    Icon: LinkedIn,
   },
   {
     name: "Facebook",
-    icon: <Facebook />,
     link: "https://facebook.com/junchengwoo",
+    Icon: Facebook,
   },
   {
     name: "Instagram",
-    icon: <Instagram />,
     link: "https://instagram.com/jayden.wjc",
+    Icon: Instagram,
   },
 ];
 

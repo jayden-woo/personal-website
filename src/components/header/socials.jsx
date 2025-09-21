@@ -5,10 +5,10 @@ import Link from "@/components/link";
 export default function Socials() {
   return (
     <ul className="mx-2 mt-8 flex items-center">
-      {SOCIAL_MEDIA.map((item) => (
-        <li key={item.name} className="mr-6 md:motion-safe:invisible">
-          <Link variant={LINK_VARIANTS.Icon} href={item.link} title={item.name}>
-            {item.icon}
+      {SOCIAL_MEDIA.map(({ name, link, Icon }, index) => (
+        <li key={index} className="mr-6 md:motion-safe:invisible">
+          <Link variant={LINK_VARIANTS.Icon} href={link} title={name}>
+            <Icon />
           </Link>
         </li>
       ))}
