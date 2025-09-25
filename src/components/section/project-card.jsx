@@ -13,7 +13,7 @@ export default function ProjectCard({ title, description, image, link, github, t
         src={image}
         alt={`Demo of ${title} project`}
       />
-      <div className="relative -top-6 -mb-4 self-end md:-top-16 md:-mb-14 md:w-10/12">
+      <div className="relative -top-6 -mb-4 self-end md:-top-16 md:-mb-14 md:w-9/12 lg:w-10/12">
         <div className="border-t-1 my-2 origin-bottom-right rounded-b-md border-2 border-gray-500/20 bg-gray-870 p-3 shadow-lg shadow-gray-900/40 duration-300 group-hover:border-gray-400/40 md:rounded-md md:border-2 md:motion-safe:invisible lg:motion-safe:transition lg:motion-safe:group-hover:scale-105">
           <div className="flex justify-between">
             <Link href={link} className="group-hover:text-sky-400" variant={LINK_VARIANTS.Title}>
