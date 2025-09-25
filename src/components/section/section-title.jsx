@@ -11,7 +11,7 @@ export default function SectionTitle({ children }) {
       ([entry]) => {
         const classes = clsx(
           // Add styles for a sticky heading in smaller screen sizes
-          "sticky top-0 z-40 -mx-6 border-b border-slate-50/[0.06] bg-gray-950/75 px-6 backdrop-blur md:-mx-12 md:px-12",
+          "sticky top-0 z-40 -mx-6 border-b border-slate-50/6 bg-gray-950/75 px-6 backdrop-blur-sm md:-mx-12 md:px-12",
           // Add styles to undo the previous heading styles in larger screens
           "lg:static lg:mx-0 lg:border-none lg:bg-transparent lg:px-0 lg:filter-none"
         ).split(" ");

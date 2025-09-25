@@ -19,7 +19,7 @@ export default function Page() {
       <Link href="#content" variant={LINK_VARIANTS.Skip}>
         Skip to Content
       </Link>
-      <div className="mx-auto min-h-screen max-w-screen-xl gap-x-4 px-6 py-10 md:px-12 md:py-10 lg:flex lg:px-20 lg:py-0">
+      <div className="mx-auto min-h-screen max-w-7xl gap-x-4 px-6 py-10 md:px-12 md:py-10 lg:flex lg:px-20 lg:py-0">
         <header className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-20">
           <div>
             <Intro />

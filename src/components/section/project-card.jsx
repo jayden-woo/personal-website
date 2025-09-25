@@ -5,7 +5,7 @@ import { GitHub, NewTab } from "@/assets/icons";
 
 export default function ProjectCard({ title, description, image, link, github, technologies }) {
   return (
-    <div className="group my-5 flex flex-col first:mt-4 last:mb-2 md:motion-safe:invisible lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
+    <div className="group my-5 flex flex-col first:mt-4 last:mb-2 md:motion-safe:invisible lg:hover:opacity-100! lg:group-hover/list:opacity-50">
       <Image
         // TODO: Decide whether to use rotate or scale for hover animation
         className="pointer-events-none origin-left select-none rounded-md border-2 border-gray-500/20 duration-200 group-hover:border-gray-400/40 md:w-9/12 md:motion-safe:invisible lg:w-10/12 lg:motion-safe:transition lg:motion-safe:group-hover:rotate-2 lg:motion-safe:group-hover:scale-105"
@@ -14,7 +14,7 @@ export default function ProjectCard({ title, description, image, link, github, t
         alt={`Demo of ${title} project`}
       />
       <div className="relative -top-6 -mb-4 self-end md:-top-16 md:-mb-14 md:w-9/12 lg:w-10/12">
-        <div className="border-t-1 my-2 origin-bottom-right rounded-b-md border-2 border-gray-500/20 bg-gray-870 p-3 shadow-lg shadow-gray-900/40 duration-300 group-hover:border-gray-400/40 md:rounded-md md:border-2 md:motion-safe:invisible lg:motion-safe:transition lg:motion-safe:group-hover:scale-105">
+        <div className="border-t my-2 origin-bottom-right rounded-b-md border-2 border-gray-500/20 bg-gray-870 p-3 shadow-lg shadow-gray-900/40 duration-300 group-hover:border-gray-400/40 md:rounded-md md:border-2 md:motion-safe:invisible lg:motion-safe:transition lg:motion-safe:group-hover:scale-105">
           <div className="flex justify-between">
             <Link href={link} className="group-hover:text-sky-400" variant={LINK_VARIANTS.Title}>
               <h3>{title}</h3>

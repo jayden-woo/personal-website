@@ -10,7 +10,7 @@ export default function SkillCategory({ label, items }) {
             <Image className="size-full grayscale duration-300 hover:grayscale-0 motion-safe:transition" />
             <span
               role="tooltip"
-              className="absolute bottom-full left-1/2 mb-2 -translate-x-1/2 text-nowrap rounded border border-gray-500/20 bg-gray-870 px-2 py-1 text-xs opacity-0 duration-300 group-hover/logo:opacity-100 motion-safe:transition-opacity"
+              className="absolute bottom-full left-1/2 mb-2 -translate-x-1/2 text-nowrap rounded-sm border border-gray-500/20 bg-gray-870 px-2 py-1 text-xs opacity-0 duration-300 group-hover/logo:opacity-100 motion-safe:transition-opacity"
             >
               {name}
             </span>
