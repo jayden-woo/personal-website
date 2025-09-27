@@ -7,10 +7,13 @@ export default function SkillCategory({ label, items }) {
       <ul className="contents">
         {items.map(({ name, Image }, index) => (
           <li key={index} className="group/logo relative size-full md:motion-safe:invisible">
-            <Image className="size-full grayscale duration-300 hover:grayscale-0 motion-safe:transition" />
+            <Image
+              alt={`Logo of ${name}`}
+              className="size-full grayscale duration-300 hover:grayscale-0 motion-safe:transition"
+            />
             <span
               role="tooltip"
-              className="absolute bottom-full left-1/2 mb-2 -translate-x-1/2 text-nowrap rounded-sm border border-gray-500/20 bg-gray-870 px-2 py-1 text-xs opacity-0 duration-300 group-hover/logo:opacity-100 motion-safe:transition-opacity"
+              className="bg-gray-870 absolute bottom-full left-1/2 mb-2 -translate-x-1/2 rounded-sm border border-gray-500/20 px-2 py-1 text-xs text-nowrap opacity-0 duration-300 group-hover/logo:opacity-100 motion-safe:transition-opacity"
             >
               {name}
             </span>

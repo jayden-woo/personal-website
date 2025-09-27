@@ -33,13 +33,13 @@ export default function Link({ children, variant = LINK_VARIANTS.Text, className
     case LINK_VARIANTS.Title:
       className = clsx(
         className,
-        "text-lg font-medium leading-tight text-slate-200 focus-visible:text-sky-400"
+        "text-lg leading-tight font-medium text-slate-200 focus-visible:text-sky-400"
       );
       break;
     case LINK_VARIANTS.Skip:
       className = clsx(
         className,
-        "absolute left-0 top-0 -translate-x-40 rounded-sm bg-sky-400 p-3 font-medium text-slate-800 focus-visible:translate-x-0 motion-safe:transition-all"
+        "absolute top-0 left-0 -translate-x-40 rounded-sm bg-sky-400 p-3 font-medium text-slate-800 focus-visible:translate-x-0 motion-safe:transition-all"
       );
       // Remove the target and rel attributes
       delete attributes.target;
