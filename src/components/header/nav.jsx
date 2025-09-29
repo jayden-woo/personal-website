@@ -1,7 +1,7 @@
 "use client";
 
 import { CONTENT_SECTIONS } from "@/assets/data/constants";
-import clsx from "clsx";
+import { cn } from "@/libs/utils";
 import { useEffect, useState } from "react";
 
 export default function Nav() {
@@ -142,7 +142,7 @@ export default function Nav() {
           <li key={section} className="md:motion-safe:invisible">
             <a
               href={`#${section}`}
-              className={clsx("group flex items-center py-3", {
+              className={cn("group flex items-center py-3", {
                 active: section === onScreen.at(0),
               })}
             >

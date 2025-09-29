@@ -1,6 +1,6 @@
 "use client";
 
-import clsx from "clsx";
+import { cn } from "@/libs/utils";
 import { useEffect, useRef } from "react";
 
 export default function SectionTitle({ children }) {
@@ -9,7 +9,7 @@ export default function SectionTitle({ children }) {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        const classes = clsx(
+        const classes = cn(
           // Add styles for a sticky heading in smaller screen sizes
           "sticky top-0 z-40 -mx-6 border-b border-slate-50/6 bg-gray-950/75 px-6 backdrop-blur-sm md:-mx-12 md:px-12",
           // Add styles to undo the previous heading styles in larger screens
