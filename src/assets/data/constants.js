@@ -5,6 +5,7 @@ export const CONTENT_SECTIONS = Object.freeze({
   Education: "education",
   Activities: "activities",
   Experiences: "experiences",
+  Contact: "contact",
 });
 
 export const LINK_VARIANTS = Object.freeze({

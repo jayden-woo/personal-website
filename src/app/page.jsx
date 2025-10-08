@@ -2,6 +2,7 @@ import Background from "@/components/background";
 import {
   About,
   Activities,
+  Contact,
   Education,
   Experiences,
   Footer,
@@ -34,6 +35,7 @@ export default function Page() {
           <Education />
           <Activities />
           <Experiences />
+          <Contact />
           <Footer />
         </main>
       </div>

@@ -6,6 +6,23 @@
   --color-gray-920: #0b111f;
   --color-gray-930: #090e1a;
   --color-gray-940: #060a16;
+
+  --animate-point: point 1.5s ease-in-out infinite alternate;
+
+  @keyframes point {
+    0% {
+      transform: translateX(-5px) rotate(-20deg);
+    }
+    42% {
+      transform: translateX(5px) rotate(5deg);
+    }
+    58% {
+      transform: translateX(5px) rotate(5deg);
+    }
+    100% {
+      transform: translateX(-5px) rotate(-20deg);
+    }
+  }
 }
 
 :root {
