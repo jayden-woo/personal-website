@@ -12,6 +12,7 @@ import {
 import { Intro, Nav, Socials } from "@/components/header";
 import Link from "@/components/link";
 import { LINK_VARIANTS } from "@/assets/data/constants";
+import ScrollToTopButton from "@/components/top-button";
 
 export default function Page() {
   return (
@@ -37,6 +38,7 @@ export default function Page() {
           <Experiences />
           <Contact />
           <Footer />
+          <ScrollToTopButton />
         </main>
       </div>
     </>
