@@ -18,8 +18,9 @@ import {
   MongoDB,
   MySQL,
   VisualStudioCode,
-  Postman,
   Render,
+  Vercel,
+  Postman,
 } from "@/assets/images/skills";
 
 const SKILLS_DATA = [
@@ -115,6 +116,10 @@ const SKILLS_DATA = [
       {
         name: "Render",
         Image: Render,
+      },
+      {
+        name: "Vercel",
+        Image: Vercel,
       },
       {
         name: "Postman",

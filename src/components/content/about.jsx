@@ -14,7 +14,7 @@ export default function About() {
       <TagWrapper className="my-4 leading-relaxed" before="<p>" after="</p>">
         {/* TODO: Decide whether to keep drop caps */}
         {/* <p className="my-2 md:motion-safe:invisible"> */}
-        <p className="my-2 first-letter:float-left first-letter:mr-1 first-letter:font-serif first-letter:text-6xl/[0.8] first-letter:text-white md:motion-safe:invisible">
+        <p className="my-3 first-letter:float-left first-letter:mr-1 first-letter:font-serif first-letter:text-6xl/[0.8] first-letter:text-white md:motion-safe:invisible">
           Hey there! My name is Jayden and I&apos;m a computing graduate with a Bachelor&apos;s
           degree from the <Link href="https://www.unimelb.edu.au/">University of Melbourne</Link>.
           My fascination with technology started young, from tinkering with machines to exploring
@@ -32,7 +32,7 @@ export default function About() {
           web experiences, developing scalable software, or tackling complex challenges. I&apos;m
           eager to keep learning, collaborate with others, and make an impact in the tech world.
         </p>
-        <p className="my-2 md:motion-safe:invisible">
+        <p className="my-3 md:motion-safe:invisible">
           Outside of coding, you&apos;ll probably find me on a badminton court, watching a sunset by
           the beach, or just relaxing in a park. At home, I dive into mind-bending films like
           Inception and Interstellar, get lost in sci-fi worlds like Avatar or Pacific Rim, keep the{" "}

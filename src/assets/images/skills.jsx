@@ -578,6 +578,21 @@ export const TailwindCSS = (props) => (
   </svg>
 );
 
+export const Vercel = (props) => (
+  <svg
+    aria-label="Vercel logomark"
+    width="96"
+    height="96"
+    role="img"
+    style={{ overflow: "visible" }}
+    // viewBox="0 0 74 64"  // Original viewBox
+    viewBox="-5 -5 86 74"
+    {...props}
+  >
+    <path d="M37.5896 0.25L74.5396 64.25H0.639648L37.5896 0.25Z" fill="white"></path>
+  </svg>
+);
+
 export const VisualStudioCode = (props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"

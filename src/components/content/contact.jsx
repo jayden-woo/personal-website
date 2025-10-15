@@ -32,7 +32,7 @@ export default function Contact() {
         </p>
         <p className="my-3 md:motion-safe:invisible">
           Get in touch
-          <span className="motion-safe:animate-point inline-block scale-175 pr-4 pl-5 motion-safe:pr-5 motion-safe:pl-6">
+          <span className="motion-safe:animate-point inline-block scale-175 px-5 motion-safe:px-6">
             👉
           </span>
           <Link
