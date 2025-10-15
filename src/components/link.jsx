@@ -30,6 +30,12 @@ export default function Link({ children, variant = LINK_VARIANTS.Text, className
         className
       );
       break;
+    case LINK_VARIANTS.Footer:
+      className = cn(
+        "font-medium text-slate-400 hover:text-sky-400 focus-visible:text-sky-400",
+        className
+      );
+      break;
     case LINK_VARIANTS.Skip:
       className = cn(
         "absolute top-0 left-0 -translate-x-40 rounded-sm bg-sky-400 p-3 font-medium text-slate-800 focus-visible:translate-x-0 motion-safe:transition-all",

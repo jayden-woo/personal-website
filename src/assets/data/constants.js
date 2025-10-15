@@ -12,5 +12,6 @@ export const LINK_VARIANTS = Object.freeze({
   Text: Symbol("text"),
   Icon: Symbol("icon"),
   Title: Symbol("title"),
+  Footer: Symbol("footer"),
   Skip: Symbol("skip"),
 });
