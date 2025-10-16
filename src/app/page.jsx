@@ -1,10 +1,10 @@
 import Background from "@/components/background";
 import {
   About,
-  Activities,
+  // Activities,
   Contact,
-  Education,
-  Experiences,
+  // Education,
+  // Experiences,
   Footer,
   Projects,
   Skills,
