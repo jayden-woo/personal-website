@@ -20,7 +20,7 @@ const PROJECTS_DATA = [
     description:
       "First attempt at a portfolio website to showcase my projects, skills I've learned or used previously, and a bit about myself. It's fully responsive for a seamless experience on any device, and its clean, simple design was inspired by a few websites I found and really liked.",
     image: personalWebsite,
-    link: "https://jayden-woo.github.io/personal-website",
+    link: "https://jayden-woo.vercel.app/",
     github: "https://github.com/jayden-woo/personal-website",
     technologies: ["Javascript", "Next", "React", "Tailwind CSS", "GitHub Pages"],
   },
