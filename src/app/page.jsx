@@ -33,9 +33,9 @@ export default function Page() {
           <About />
           <Projects />
           <Skills />
-          <Education />
+          {/* <Education />
           <Activities />
-          <Experiences />
+          <Experiences /> */}
           <Contact />
           <Footer />
           <ScrollToTopButton />

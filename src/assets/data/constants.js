@@ -2,9 +2,9 @@ export const CONTENT_SECTIONS = Object.freeze({
   About: "about",
   Projects: "projects",
   Skills: "skills",
-  Education: "education",
-  Activities: "activities",
-  Experiences: "experiences",
+  // Education: "education",
+  // Activities: "activities",
+  // Experiences: "experiences",
   Contact: "contact",
 });
 
