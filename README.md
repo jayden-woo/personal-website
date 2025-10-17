@@ -4,10 +4,12 @@
   </a>
   <h1>Jayden Woo</h1>
   <h4 align="center">A personal portfolio website built using <a href="https://nextjs.org/" target="_blank">Next.js</a>.</h4>
-  <a href="https://nodejs.org/en" target="_blank"><img alt="Node.js Logo" src="https://img.shields.io/badge/Node.js-22-gray?style=flat&logo=node.js&logoColor=white&labelColor=6DA55F"></a>
-  <a href="https://nextjs.org/" target="_blank"><img alt="Next.js Logo" src="https://img.shields.io/badge/Next.js-000000?style=flat&logo=nextdotjs&logoColor=white"></a>
-  <a href="https://tailwindcss.com/" target="_blank"><img alt="Tailwind CSS Logo" src="https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=flat&logo=tailwind-css&logoColor=white"></a>
-  <a href="https://vercel.com/" target="_blank"><img alt="Vercel Logo" src="https://img.shields.io/badge/Vercel-%23000000.svg?style=flat&logo=vercel&logoColor=white"></a>
+  <p>
+    <a href="https://nodejs.org/en" target="_blank"><img alt="Node.js Logo" src="https://img.shields.io/badge/Node.js-22-gray?style=flat&logo=node.js&logoColor=white&labelColor=6DA55F"></a>
+    <a href="https://nextjs.org/" target="_blank"><img alt="Next.js Logo" src="https://img.shields.io/badge/Next.js-000000?style=flat&logo=nextdotjs&logoColor=white"></a>
+    <a href="https://tailwindcss.com/" target="_blank"><img alt="Tailwind CSS Logo" src="https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=flat&logo=tailwind-css&logoColor=white"></a>
+    <a href="https://vercel.com/" target="_blank"><img alt="Vercel Logo" src="https://img.shields.io/badge/Vercel-%23000000.svg?style=flat&logo=vercel&logoColor=white"></a>
+  </p>
 </div>
 
 <div align="center">
