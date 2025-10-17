@@ -18,7 +18,7 @@ const PROJECTS_DATA = [
   {
     title: "Personal Website",
     description:
-      "First attempt at a portfolio website to showcase my projects, skills I've learned or used previously, and a bit about myself. It's fully responsive for a seamless experience on any device, and its clean, simple design was inspired by a few websites I found and really liked.",
+      "A personal portfolio website showcasing my projects, the skills I've learned and applied previously, and a bit about who I am. It's fully responsive for a seamless experience across all devices, featuring a clean, minimalist design inspired by some websites I've found and really liked.",
     image: personalWebsite,
     link: "https://jayden-woo.vercel.app/",
     github: "https://github.com/jayden-woo/personal-website",
